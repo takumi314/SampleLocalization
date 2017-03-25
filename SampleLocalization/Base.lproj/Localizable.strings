@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SampleLocalization
+
+  Created by NishiokaKohei on 2017/03/25.
+  Copyright © 2017年 Kohey. All rights reserved.
+*/
+
+"Main.Label.Title"              =   "Sample Internatinalization";
+"Main.Button.ShowAlert"         =   "Show a alart";
+"Main.Button.OpenCustonView"    =   "Open the Custom View";
+
+"Main.Alert.Title"              =   "Title";
+"Main.Alert.Massage1"           =   "Massage.";
+"Main.Alert.OK"                 =   "OK";
+"Main.Alert.Cancel"             =   "Cacel";
+
+"Custom.Button.OK"              =   "OK";
+"Custom.Button.Close"           =   "Close";

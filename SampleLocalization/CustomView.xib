@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomView" customModule="SampleLocalization">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osh-ye-DYS">
+                    <rect key="frame" x="120" y="103" width="30" height="30"/>
+                    <state key="normal" title="OK"/>
+                    <connections>
+                        <action selector="didTapOK:" destination="iN0-l3-epB" eventType="touchUpInside" id="LFD-Ca-Xj7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myB-ug-ujO">
+                    <rect key="frame" x="274" y="103" width="39" height="30"/>
+                    <state key="normal" title="Close"/>
+                    <connections>
+                        <action selector="didTapClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="rH2-fd-V3q"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="myB-ug-ujO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9nk-QU-Btn"/>
+                <constraint firstAttribute="trailing" secondItem="myB-ug-ujO" secondAttribute="trailing" constant="82" id="OqO-u8-bYx"/>
+                <constraint firstItem="myB-ug-ujO" firstAttribute="leading" secondItem="Osh-ye-DYS" secondAttribute="trailing" constant="152" id="VBq-kD-TDP"/>
+                <constraint firstItem="Osh-ye-DYS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fUe-4F-HRn"/>
+                <constraint firstItem="Osh-ye-DYS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="72" id="rVH-QW-Ad4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="myB-ug-ujO" id="OGf-Hw-0L9"/>
+                <outlet property="okButton" destination="Osh-ye-DYS" id="GIN-zN-2md"/>
+            </connections>
+            <point key="canvasLocation" x="97.5" y="197"/>
+        </view>
+    </objects>
+</document>

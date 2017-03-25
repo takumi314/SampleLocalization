@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SampleLocalization
+
+  Created by NishiokaKohei on 2017/03/25.
+  Copyright © 2017年 Kohey. All rights reserved.
+*/
+
+"Main.Label.Title"              =   "多言語化サンプル";
+"Main.Button.ShowAlert"         =   "アラートを表示する";
+"Main.Button.OpenCustonView"    =   "カスタムビューを表示する";
+
+"Main.Alert.Title"              =   "タイトル";
+"Main.Alert.Massage1"           =   "ここにはアラートメッセージ。";
+"Main.Alert.OK"                 =   "OK";
+"Main.Alert.Cancel"             =   "キャンセル";
+
+"Custom.Button.OK"              =   "OK";
+"Custom.Button.Close"           =   "閉じる";
