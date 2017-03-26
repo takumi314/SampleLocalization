@@ -14,25 +14,23 @@ class CustomView: UIView {
 
     weak var contentView: UIView!
 
-    class var sharedInstance: CustomView {
-        struct Static {
-            static let instance = CustomView()
-        }
-        return Static.instance
-    }
+    /// swift1.2以降ではstatic定数が宣言可能
+    static let sharedInstanceFromNib: CustomView? = {
+        return UINib(nibName: "CustomView",
+                     bundle: nil)
+            .instantiate(withOwner: nil, options: nil)
+            .first as? CustomView
+    }()
 
-    class var sharedInstanceFromNib: CustomView? {
+    /// Swift1.2以前の書き方
+    class var oldSharedInstanceFromNib: CustomView? {
         struct Static {
             static let instance
                 = UINib(nibName: "CustomView", bundle: nil)
                     .instantiate(withOwner: nil, options: nil)
                     .first as? CustomView
         }
-        guard let instance = Static.instance else {
-            return nil
-        }
-
-        return instance
+        return Static.instance
     }
 
 
