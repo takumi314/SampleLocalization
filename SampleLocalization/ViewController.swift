@@ -13,7 +13,8 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
 
-    // IBOutlets
+    
+    // MARK: - IBOutlets
 
     @IBOutlet private weak var mainTitleLabel: UILabel!
     @IBOutlet private weak var alertButton: UIButton!
@@ -25,7 +26,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-//        mainTitleLabel.text = NSLocalizedString("Main.Label.Title", tableName: nil, bundle: Bundle.main, value: "", comment: "")
         mainTitleLabel.text = NSLocalizedString("Main.Label.Title", comment: "")
         alertButton.setTitle(NSLocalizedString("Main.Button.ShowAlert", comment: ""), for: .normal)
         customViewButton.setTitle(NSLocalizedString("Main.Button.OpenCustonView", comment: ""), for: .normal)
@@ -53,10 +53,12 @@ class ViewController: UIViewController {
     }
 
     private func openCustomView() {
-        guard let view = CustomView.instance() else {
+        guard let view = CustomView.sharedInstanceFromNib else {
             return
         }
-
+//        guard let view = CustomView.instance() else {
+//            return
+//        }
         view.backgroundColor = UIColor.orange
         self.view.layoutSubviews()
 
@@ -64,7 +66,6 @@ class ViewController: UIViewController {
                        animations: {
                         self.view.addSubview(view)
                     })
-
     }
 
     private func showAlert() {

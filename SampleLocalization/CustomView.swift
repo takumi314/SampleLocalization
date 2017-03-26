@@ -14,6 +14,27 @@ class CustomView: UIView {
 
     weak var contentView: UIView!
 
+    class var sharedInstance: CustomView {
+        struct Static {
+            static let instance = CustomView()
+        }
+        return Static.instance
+    }
+
+    class var sharedInstanceFromNib: CustomView? {
+        struct Static {
+            static let instance
+                = UINib(nibName: "CustomView", bundle: nil)
+                    .instantiate(withOwner: nil, options: nil)
+                    .first as? CustomView
+        }
+        guard let instance = Static.instance else {
+            return CustomView()
+        }
+
+        return instance
+    }
+
 
     // MARK: - IBOutlets
 
@@ -23,24 +44,25 @@ class CustomView: UIView {
 
     // MARK: - Initializer
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
     class func instanceFromNib() -> CustomView? {
         return UINib(nibName: "CustomView",
-                     bundle: nil).instantiate(withOwner: nil, options: nil).first as? CustomView
+                     bundle: nil)
+            .instantiate(withOwner: nil, options: nil)
+            .first as? CustomView
     }
 
     class func instance() -> UIView? {
         // create a view's instance from the xib file.
-        // load a xib's file
         let nib = UINib(nibName: "CustomView", bundle: nil)
-        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView else {
-            return nil
+        guard let view = nib
+            .instantiate(withOwner: nil, options: nil)
+            .first
+            as? UIView else {
+                return nil
         }
         
         // define a size of the View
@@ -55,7 +77,11 @@ class CustomView: UIView {
     }
 
 
-    // Inherited methods
+    // MARK: - Inherited methods
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -88,9 +114,10 @@ class CustomView: UIView {
         }, completion: { (finished) in
             self.contentView.removeFromSuperview()
         })
+
     }
 
-    internal func hoge() {
+    internal func doSomething() {
         // code
     }
 
