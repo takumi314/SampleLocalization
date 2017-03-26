@@ -29,7 +29,7 @@ class CustomView: UIView {
                     .first as? CustomView
         }
         guard let instance = Static.instance else {
-            return CustomView()
+            return nil
         }
 
         return instance
