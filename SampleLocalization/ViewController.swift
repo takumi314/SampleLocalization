@@ -56,9 +56,6 @@ class ViewController: UIViewController {
         guard let view = CustomView.sharedInstanceFromNib else {
             return
         }
-//        guard let view = CustomView.instance() else {
-//            return
-//        }
         view.backgroundColor = UIColor.orange
         self.view.layoutSubviews()
 
